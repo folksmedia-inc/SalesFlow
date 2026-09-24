@@ -1,0 +1,16 @@
+.strong {
+  font-weight: 500;
+  color: var(--app-text-heading);
+}
+
+.overdue {
+  color: var(--app-color-error);
+
+  :global(html[data-theme='dark']) & {
+    color: #ff7a7a;
+  }
+}
+
+.subtle {
+  color: var(--app-text-secondary);
+}

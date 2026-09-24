@@ -1,0 +1,16 @@
+// Embedded in Settings: the settings page already shows breadcrumbs and a
+// page title, so the list header becomes a section heading.
+.embedded {
+  :global(.ant-breadcrumb) {
+    display: none;
+  }
+
+  header h3:global(.ant-typography) {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  header {
+    margin-bottom: 16px;
+  }
+}

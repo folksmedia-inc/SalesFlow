@@ -1,0 +1,47 @@
+.chips {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.on,
+.off {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.on {
+  background: var(--app-color-primary);
+  color: #fff;
+}
+
+.off {
+  background: var(--app-border-secondary);
+  color: var(--app-text-tertiary);
+}
+
+th.active,
+td.active {
+  background: color-mix(in srgb, var(--app-color-primary-bg) 60%, transparent) !important;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px 16px 0;
+  font-size: 12px;
+  color: var(--app-text-secondary);
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+}

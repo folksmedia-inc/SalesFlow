@@ -1,0 +1,55 @@
+.sider:global(.ant-layout-sider) {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  border-right: 1px solid var(--app-sider-border);
+  z-index: 20;
+}
+
+.sider :global(.ant-layout-sider-children) {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 18px;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brandLink {
+  display: inline-flex;
+  border-radius: 8px;
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0 16px;
+
+  :global(.ant-menu) {
+    border-inline-end: none !important;
+  }
+
+  :global(.ant-menu-item-group-title) {
+    padding-top: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  :global(.ant-menu-item-divider) {
+    margin: 8px 16px;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :global(.ant-menu-item a) {
+    color: inherit;
+  }
+}

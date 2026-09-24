@@ -1,0 +1,40 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin-top: 16px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+// Side-by-side chart cards share the row height.
+.equalRow {
+  > :global(.ant-col) {
+    display: flex;
+
+    > * {
+      flex: 1;
+    }
+  }
+}
+
+.activityCol {
+  display: flex;
+}
+
+.activityCard {
+  flex: 1;
+  min-width: 0;
+}
+
+.viewAll {
+  font-size: 13px;
+  font-weight: 500;
+}

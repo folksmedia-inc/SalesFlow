@@ -1,0 +1,10 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  // PageHeader carries its own bottom margin; the flex gap handles spacing here.
+  > header {
+    margin-bottom: 4px;
+  }
+}

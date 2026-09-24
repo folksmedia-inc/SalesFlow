@@ -1,0 +1,61 @@
+@use '@/styles/breakpoints' as bp;
+
+.layout {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav {
+  position: sticky;
+  top: 84px;
+}
+
+.navHorizontal {
+  min-width: 0;
+
+  // Scroll sideways on narrow screens instead of hiding sections in a "…" menu.
+  :global(.ant-card-body) {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  :global(.ant-menu-horizontal) {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+}
+
+.menu:global(.ant-menu) {
+  border: none !important;
+  background: transparent;
+}
+
+.nav .menu:global(.ant-menu-inline) :global(.ant-menu-item) {
+  width: 100%;
+  margin-inline: 0;
+}
+
+.nav .menu :global(.ant-menu-item-group-title) {
+  padding: 12px 12px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.content {
+  min-width: 0;
+}
+
+// Tighter items so every section fits on tablets without the overflow menu.
+.navHorizontal .menu:global(.ant-menu-horizontal) > :global(.ant-menu-item) {
+  padding-inline: 12px;
+}

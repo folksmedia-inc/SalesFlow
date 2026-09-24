@@ -1,0 +1,40 @@
+.guide {
+  margin: 12px 0 0;
+
+  div + div {
+    margin-top: 12px;
+  }
+
+  dt {
+    font-weight: 600;
+    color: var(--app-text-heading);
+  }
+
+  dd {
+    margin: 2px 0 0;
+    color: var(--app-text-secondary);
+  }
+}
+
+.shortcuts {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+
+  td {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--app-border-secondary);
+  }
+
+  td:first-child {
+    width: 40%;
+  }
+
+  kbd {
+    padding: 2px 6px;
+    border: 1px solid var(--app-border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 12px;
+  }
+}

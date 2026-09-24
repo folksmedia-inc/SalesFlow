@@ -1,0 +1,137 @@
+@use '@/styles/breakpoints' as bp;
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(360px, 5fr) 7fr;
+  min-height: 100vh;
+  background: var(--app-bg-container);
+
+  @include bp.below(bp.$lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.brandPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 48px;
+  background: #0b2545;
+  color: #fff;
+
+  @include bp.below(bp.$lg) {
+    display: none;
+  }
+}
+
+.pitch {
+  max-width: 420px;
+}
+
+.pitchTitle {
+  margin: 0 0 28px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.45;
+  }
+
+  svg {
+    margin-top: 2px;
+    color: #7ab8ff;
+  }
+}
+
+.footnote {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.formPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--app-bg-layout);
+}
+
+.formCard {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border: 1px solid var(--app-border-secondary);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-bg-container);
+  box-shadow: var(--app-shadow-sm);
+
+  @include bp.below(bp.$md) {
+    padding: 28px 20px;
+  }
+}
+
+.mobileLogo {
+  display: none;
+  margin-bottom: 24px;
+
+  @include bp.below(bp.$lg) {
+    display: block;
+  }
+}
+
+.title:global(.ant-typography) {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0 4px;
+
+  &:empty {
+    margin-bottom: 20px;
+  }
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin: -12px 0 16px;
+}
+
+.linkButton:global(.ant-btn) {
+  padding-inline: 0;
+}
+
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 14px;
+  border-radius: var(--app-radius);
+  background: var(--app-bg-subtle);
+}
+
+.demoText:global(.ant-typography) {
+  font-size: 12px;
+}

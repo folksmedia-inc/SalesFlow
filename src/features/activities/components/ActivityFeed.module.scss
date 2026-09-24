@@ -1,0 +1,217 @@
+@use '@/styles/breakpoints' as bp;
+
+/* ---------------------------------------------------------------- */
+/* Type chips                                                        */
+/* ---------------------------------------------------------------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 8px 0 10px;
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  background: var(--app-bg-container);
+  color: var(--app-text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    border-color: var(--app-color-primary);
+  }
+
+  &[aria-pressed='true'] {
+    border-color: var(--app-color-primary);
+    background: var(--app-color-primary-bg);
+    color: var(--app-text-heading);
+    font-weight: 500;
+  }
+}
+
+.chipCount {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--app-bg-subtle);
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--app-text-secondary);
+  font-variant-numeric: tabular-nums;
+
+  .chip[aria-pressed='true'] & {
+    background: var(--app-bg-container);
+    color: var(--app-text-heading);
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/* Day groups                                                        */
+/* ---------------------------------------------------------------- */
+
+.group + .group {
+  margin-top: 8px;
+}
+
+.groupHeader {
+  position: sticky;
+  top: 60px; // below the sticky app header
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 0 8px;
+  border-bottom: 1px solid var(--app-border-secondary);
+  background: var(--app-bg-container);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-text-heading);
+}
+
+.groupDate {
+  font-weight: 400;
+  color: var(--app-text-secondary);
+}
+
+.groupCount {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--app-text-tertiary);
+}
+
+.list {
+  margin: 0;
+  padding: 4px 0 0;
+  list-style: none;
+}
+
+/* ---------------------------------------------------------------- */
+/* Item                                                              */
+/* ---------------------------------------------------------------- */
+
+.item {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding: 12px 8px 12px 0;
+
+  // Connector between consecutive items of the same day.
+  &:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 46px;
+    bottom: -10px;
+    left: 15px;
+    width: 1px;
+    background: var(--app-border-secondary);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 24px;
+}
+
+.subject {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  color: var(--app-text-heading);
+}
+
+.time {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--app-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.delete:global(.ant-btn) {
+  flex-shrink: 0;
+  color: var(--app-text-tertiary);
+
+  &:hover {
+    color: var(--app-color-error) !important;
+  }
+}
+
+@media (hover: hover) {
+  .delete:global(.ant-btn) {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .item:hover .delete:global(.ant-btn),
+  .item:focus-within .delete:global(.ant-btn) {
+    opacity: 1;
+  }
+}
+
+.description {
+  margin: 2px 0 6px;
+  color: var(--app-text-secondary);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+.type {
+  font-weight: 500;
+  color: var(--app-text);
+}
+
+.person {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.related {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include bp.below(bp.$md) {
+    white-space: normal;
+  }
+}

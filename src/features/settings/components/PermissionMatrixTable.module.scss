@@ -1,0 +1,10 @@
+// Unsaved change: tinted cell with an accent bar so it reads in both themes.
+td.changed {
+  background: var(--app-color-primary-bg) !important;
+  box-shadow: inset 0 -2px 0 var(--app-color-primary);
+}
+
+.headerCheckbox {
+  font-weight: 600;
+  white-space: nowrap;
+}

@@ -1,0 +1,47 @@
+@use '@/styles/breakpoints' as bp;
+
+.search {
+  width: 100%;
+  max-width: 480px;
+}
+
+.kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--app-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--app-text-tertiary);
+
+  @include bp.below(bp.$lg) {
+    display: none;
+  }
+}
+
+.groupLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+  padding: 2px 0;
+}
+
+.optionLabel {
+  font-weight: 500;
+  color: var(--app-text-heading);
+}
+
+.optionDescription {
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+.empty {
+  color: var(--app-text-secondary);
+}

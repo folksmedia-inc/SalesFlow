@@ -1,0 +1,65 @@
+// Global base styles. Component styles live in co-located *.module.scss files
+// and read theme colors from the --app-* variables set by applyCssVariables.
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--app-bg-layout, #f3f5f8);
+  color: var(--app-text, rgba(0, 0, 0, 0.88));
+  font-family: var(--app-font-family, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+:focus-visible {
+  outline: 2px solid var(--app-color-primary, #0176d3);
+  outline-offset: 2px;
+}
+
+// Lucide icons inside antd buttons/menus: align with text baseline.
+.lucide {
+  flex-shrink: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Subtle scrollbars that respect the theme.
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-border, #d8dde6) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

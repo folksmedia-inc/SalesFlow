@@ -1,0 +1,17 @@
+// Breakpoints aligned with antd's grid (md = tablet, lg = laptop, xl = desktop).
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1600px;
+
+@mixin below($width) {
+  @media (max-width: ($width - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin above($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}

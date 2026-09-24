@@ -1,0 +1,61 @@
+@use '@/styles/breakpoints' as bp;
+
+.card + .card {
+  margin-top: 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.search {
+  width: 260px;
+
+  @include bp.below(bp.$md) {
+    width: 100%;
+  }
+}
+
+.select {
+  min-width: 150px;
+}
+
+.count {
+  flex-shrink: 0;
+  padding-top: 6px;
+  font-size: 13px;
+  color: var(--app-text-secondary);
+  white-space: nowrap;
+}
+
+.bulkBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--app-color-primary);
+  border-radius: var(--app-radius);
+  background: var(--app-color-primary-bg);
+}
+
+.bulkCount {
+  font-weight: 600;
+  color: var(--app-color-primary);
+}
+
+.bulkSpacer {
+  flex: 1;
+}

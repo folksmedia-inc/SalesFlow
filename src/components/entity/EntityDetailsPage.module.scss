@@ -1,0 +1,75 @@
+@use '@/styles/breakpoints' as bp;
+
+.breadcrumbs {
+  margin-bottom: 16px;
+}
+
+.headerCard {
+  margin-bottom: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  @include bp.below(bp.$lg) {
+    flex-wrap: wrap;
+  }
+}
+
+.avatar {
+  flex-shrink: 0;
+  font-size: 24px !important;
+  font-weight: 600;
+}
+
+.identity {
+  flex: 1;
+  min-width: 220px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title:global(.ant-typography) {
+  margin: 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin-top: 2px;
+  font-size: 15px;
+  color: var(--app-text-secondary);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--app-text-secondary);
+}
+
+.actions {
+  flex-shrink: 0;
+
+  @include bp.below(bp.$lg) {
+    width: 100%;
+  }
+}
+
+.tabs :global(.ant-tabs-nav) {
+  margin-bottom: 16px;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

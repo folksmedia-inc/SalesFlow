@@ -1,0 +1,28 @@
+.header:global(.ant-layout-header) {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--app-border-secondary);
+  line-height: normal;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.center {
+  flex: 1;
+  min-width: 0;
+}
+
+.divider:global(.ant-divider) {
+  height: 24px;
+  margin: 0 8px;
+}

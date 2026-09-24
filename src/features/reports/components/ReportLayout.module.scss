@@ -1,0 +1,152 @@
+@use '@/styles/breakpoints' as bp;
+
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Filter bar */
+
+.toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+
+  > :global(.ant-btn) {
+    flex-shrink: 0;
+  }
+
+  @include bp.below(bp.$md) {
+    flex-direction: column-reverse;
+    align-items: stretch;
+
+    > :global(.ant-btn) {
+      align-self: flex-end;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dateRange {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.presetSelect {
+  width: 164px;
+}
+
+.selectIcon {
+  color: var(--app-text-secondary);
+}
+
+.rangePicker {
+  width: 256px;
+
+  @include bp.below(bp.$md) {
+    width: 100%;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: var(--app-border-secondary);
+
+  @include bp.below(bp.$md) {
+    display: none;
+  }
+}
+
+.filterSelect {
+  width: 156px;
+
+  @include bp.below(bp.$md) {
+    width: calc(50% - 4px);
+  }
+}
+
+.reset:global(.ant-btn) {
+  padding-inline: 4px;
+}
+
+.scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--app-border-secondary);
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+.scopeNote {
+  color: var(--app-text-tertiary);
+}
+
+/* Summary tiles */
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--app-border-secondary);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-bg-container);
+}
+
+.tileLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--app-text-secondary);
+}
+
+.tileValue {
+  margin-top: 4px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--app-text-heading);
+}
+
+.tileCaption {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+/* Charts & table */
+
+.chartCol {
+  display: flex;
+
+  > * {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.tableTitle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.count {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--app-text-secondary);
+}

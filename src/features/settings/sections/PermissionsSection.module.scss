@@ -1,0 +1,59 @@
+@use '@/styles/breakpoints' as bp;
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-bottom: 12px;
+}
+
+.rolePicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pickerLabel {
+  font-weight: 600;
+  color: var(--app-text-heading);
+}
+
+.select {
+  width: 220px;
+
+  @include bp.below(bp.$md) {
+    width: 180px;
+  }
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--app-text-secondary);
+}
+
+.sep {
+  color: var(--app-text-tertiary);
+}
+
+.presets {
+  margin-left: auto;
+}
+
+.description {
+  margin: 0 0 16px;
+  color: var(--app-text-secondary);
+}
+
+.alert {
+  margin-bottom: 16px;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--app-text-tertiary);
+}

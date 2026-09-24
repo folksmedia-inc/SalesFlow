@@ -1,0 +1,67 @@
+@use '@/styles/breakpoints' as bp;
+
+.shell {
+  min-height: 100vh;
+}
+
+.main {
+  position: relative;
+  min-width: 0;
+}
+
+.content {
+  padding: 24px;
+  outline: none;
+
+  @include bp.below(bp.$lg) {
+    padding: 16px;
+  }
+}
+
+.inner {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.skipLink {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 8px 16px;
+  border-radius: var(--app-radius);
+  background: var(--app-color-primary);
+  color: #fff;
+
+  &:focus {
+    top: 12px;
+  }
+}
+
+// Thin indeterminate bar shown while a lazy route module is loading.
+.progress {
+  position: sticky;
+  top: 60px;
+  z-index: 9;
+  height: 2px;
+  overflow: hidden;
+  background: var(--app-color-primary-bg);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: var(--app-color-primary);
+    animation: progress 1s ease-in-out infinite;
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}

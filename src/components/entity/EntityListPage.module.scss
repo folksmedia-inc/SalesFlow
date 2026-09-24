@@ -1,0 +1,39 @@
+@use '@/styles/breakpoints' as bp;
+
+.card {
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  @include bp.below(bp.$xl) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.search {
+  width: 260px;
+
+  @include bp.below(bp.$md) {
+    width: 100%;
+  }
+}
+
+.tools {
+  flex-shrink: 0;
+  justify-content: flex-end;
+}

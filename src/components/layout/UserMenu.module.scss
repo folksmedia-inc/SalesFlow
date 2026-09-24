@@ -1,0 +1,71 @@
+@use '@/styles/breakpoints' as bp;
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px 4px 4px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--app-text);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: var(--app-bg-subtle);
+  }
+}
+
+.avatar {
+  background: var(--app-color-primary) !important;
+  font-weight: 600;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+
+  @include bp.below(bp.$md) {
+    display: none;
+  }
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app-text-heading);
+}
+
+.role {
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+.chevron {
+  color: var(--app-text-tertiary);
+
+  @include bp.below(bp.$md) {
+    display: none;
+  }
+}
+
+.menuHeader {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0;
+  min-width: 200px;
+}
+
+.menuName {
+  font-weight: 600;
+  color: var(--app-text-heading);
+}
+
+.menuEmail {
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}

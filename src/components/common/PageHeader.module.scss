@@ -1,0 +1,48 @@
+@use '@/styles/breakpoints' as bp;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  @include bp.below(bp.$md) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.heading {
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title:global(.ant-typography) {
+  margin: 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  display: block;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-shrink: 0;
+}

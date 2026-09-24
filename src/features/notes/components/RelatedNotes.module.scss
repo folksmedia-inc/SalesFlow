@@ -1,0 +1,47 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.note {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+
+  & + & {
+    border-top: 1px solid var(--app-border-secondary);
+  }
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.author {
+  font-weight: 600;
+  color: var(--app-text-heading);
+}
+
+.time:global(.ant-typography) {
+  font-size: 12px;
+}
+
+.delete {
+  margin-left: auto;
+}
+
+.content {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  color: var(--app-text);
+}

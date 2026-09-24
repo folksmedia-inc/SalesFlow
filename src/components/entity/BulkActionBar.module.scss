@@ -1,0 +1,20 @@
+.bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--app-color-primary);
+  border-radius: var(--app-radius);
+  background: var(--app-color-primary-bg);
+}
+
+.count {
+  font-weight: 600;
+  color: var(--app-color-primary);
+}
+
+.clear {
+  margin-left: auto;
+}

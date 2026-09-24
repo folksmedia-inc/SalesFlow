@@ -1,0 +1,95 @@
+@use '@/styles/breakpoints' as bp;
+
+.picker {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+
+  @include bp.below(bp.$xl) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include bp.below(bp.$md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--app-border-secondary);
+  border-radius: var(--app-radius-lg);
+  background: var(--app-bg-container);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background-color 0.15s;
+
+  &:hover {
+    border-color: var(--app-border);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--app-color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.selected {
+  border-color: var(--app-color-primary);
+  box-shadow: inset 0 0 0 1px var(--app-color-primary);
+
+  &:hover {
+    border-color: var(--app-color-primary);
+  }
+
+  .icon {
+    border-color: transparent;
+    background: var(--app-color-primary);
+    color: #fff;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid var(--app-border-secondary);
+  border-radius: 8px;
+  color: var(--app-color-primary);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.label {
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--app-text-heading);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--app-text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

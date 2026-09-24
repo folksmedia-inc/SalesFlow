@@ -1,0 +1,94 @@
+@use '@/styles/breakpoints' as bp;
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: start;
+
+  @include bp.below(bp.$xl) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.main {
+  min-width: 0;
+}
+
+.aside {
+  position: sticky;
+  top: 84px; // app header (60) + page gutter
+
+  @include bp.below(bp.$xl) {
+    display: none;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 16px 12px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.search {
+  width: 220px;
+
+  @include bp.below(bp.$md) {
+    width: 100%;
+  }
+}
+
+.select {
+  min-width: 150px;
+}
+
+.range {
+  width: 240px;
+}
+
+.resultBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 38px;
+  padding: 4px 16px;
+  border-top: 1px solid var(--app-border-secondary);
+  border-bottom: 1px solid var(--app-border-secondary);
+  background: var(--app-bg-subtle);
+  font-size: 12px;
+  color: var(--app-text-secondary);
+}
+
+.feed {
+  padding: 0 16px 16px;
+}
+
+.loadMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--app-border-secondary);
+  margin-top: 4px;
+}
+
+.loadMoreHint {
+  font-size: 12px;
+  color: var(--app-text-tertiary);
+}
+
+.clearAll:global(.ant-btn) {
+  height: auto;
+  padding: 0;
+  font-size: 12px;
+}
