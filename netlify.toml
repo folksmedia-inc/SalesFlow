@@ -1,0 +1,11 @@
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+# Single-page app: serve index.html for every route so deep links and
+# reloads (e.g. /login, /employees/emp_002) are handled by React Router.
+# Real files (assets, favicon) are served as-is because the rule is not forced.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
