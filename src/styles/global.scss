@@ -1,6 +1,14 @@
 // Global base styles. Component styles live in co-located *.module.scss files
 // and read theme colors from the --app-* variables set by applyCssVariables.
 
+:root {
+  // Hosts like Netlify inject their own fixed badge into the bottom-right
+  // corner of the page, on top of our content. Bars pinned to that corner
+  // (sticky/drawer footers with right-aligned actions) reserve this much
+  // space on their trailing edge so the badge never covers a button.
+  --app-corner-reserve: 190px;
+}
+
 *,
 *::before,
 *::after {

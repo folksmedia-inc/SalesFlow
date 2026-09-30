@@ -1,0 +1,14 @@
+@use '@/styles/breakpoints' as bp;
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  // Reserve space so a host-injected corner badge (e.g. Netlify's) never
+  // covers the primary action — the drawer is anchored to the viewport's
+  // right and bottom edges, exactly where such badges are placed.
+  padding-inline-end: var(--app-corner-reserve);
+
+  @include bp.below(bp.$md) {
+    padding-inline-end: 0;
+  }
+}

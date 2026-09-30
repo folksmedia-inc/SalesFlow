@@ -4,6 +4,7 @@ import type { FieldValues } from 'react-hook-form'
 import type { EntityKey, EntityOf } from '@/store/entities/types'
 import { EntityForm } from './EntityForm'
 import type { EntityConfig } from './types'
+import styles from './EntityFormDrawer.module.scss'
 
 interface EntityFormDrawerProps<K extends EntityKey, V extends FieldValues> {
   config: EntityConfig<K, V>
@@ -34,7 +35,7 @@ export function EntityFormDrawer<K extends EntityKey, V extends FieldValues>({
       size={720}
       destroyOnHidden
       footer={
-        <Space style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <Space className={styles.footer}>
           <Button onClick={onClose}>Cancel</Button>
           <Button htmlType="reset" form={formId} disabled={!dirty}>
             Reset
